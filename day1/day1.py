@@ -2,12 +2,13 @@
 
 calibration_sum = 0
 with open('puzzle_input.txt', 'r') as in_file:
-    for line in in_file:
-        if line.strip():
-            calib = [i for i in line.strip() if i.isdigit()]
-            full_num = int(calib[0] + calib[-1])
-            # print(full_num)
-            calibration_sum += full_num
+    lines = [line.strip() for line in in_file]
+
+for line in lines:
+    calib = [i for i in line if i.isdigit()]
+    full_num = int(calib[0] + calib[-1])
+    # print(full_num)
+    calibration_sum += full_num
 
 print(calibration_sum)
 
